@@ -4,7 +4,7 @@
  * @date 2019-09-06
  */
 @RestResource(UrlMapping = '/v1/orders/*')
-global with sharing class OrdersEndpoint {
+global with sharing class OrdersEndpoint_v1 {
 
     /**
      * Handles POST request to the leads endpoint
