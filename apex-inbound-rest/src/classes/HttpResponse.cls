@@ -3,7 +3,7 @@
  * @description This is the http response class
  * @date 2019-09-07
  */
-public class HttpResponse {
+public virtual class HttpResponse {
 
     /**
      * HttpResponse default constructor
@@ -15,7 +15,7 @@ public class HttpResponse {
      *
      * @return Boolean
      */
-    public Boolean isSucces() {
+    public virtual Boolean isSucces() {
 
         return true;
     }
