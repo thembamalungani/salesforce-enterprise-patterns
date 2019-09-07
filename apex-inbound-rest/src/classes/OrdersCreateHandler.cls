@@ -3,21 +3,21 @@
  * @description This processes lead service requests
  * @date 2019-09-06
  */
-public class LeadServiceCreateHandler extends BaseHttpMethodHandler {
+public class OrdersCreateHandler extends BaseHttpMethodHandler {
 
     /**
      * LeadServiceCreateHandler default constructor
      */
-    public LeadServiceCreateHandler() {}
+    public OrdersCreateHandler() {}
 
     /**
      * Handles the http request by delegating the handling to the instance of IHttpMethodHandler
      * passed
      *
-     * @param HttpHandler.Request request
-     * @return HttpHandler.Response
+     * @param HttpRequest request
+     * @return HttpResponse
      */
-    public override HttpHandler.Response handle(HttpHandler.Request request) {
+    public override HttpResponse handle(HttpRequest request) {
 
         return null;
     }

@@ -17,7 +17,7 @@ public virtual class Container {
      * beanName => instance
      */
     protected static final Map<String, Object> BINDINGS = new Map<String, Object>{
-        LeadServiceCreateHandler.class.getName() => new LeadServiceHandler()
+        OrdersCreateHandler.class.getName() => new LeadServiceHandler()
     };
 
     /**
