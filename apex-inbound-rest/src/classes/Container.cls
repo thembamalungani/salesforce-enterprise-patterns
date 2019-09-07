@@ -31,14 +31,10 @@ public virtual class Container {
 
         if ( bean instanceof String ) {
             
-            bean bean = this.createBean((String)bean);
-
-            if ( bean == null ) {
-
-                String message = String.format(StringConstants.INVALID_BEAN_EXCEPTION, new String[]{ bean });
-                throw new Container.InvalidBeanException(message);
-            }
+            Object bean = this.createBean((String)bean);
         }
+
+        this.assertBean(bean, (String)bean);
 
         BINDINGS.put(name, bean);
     }
@@ -54,15 +50,7 @@ public virtual class Container {
 
         Object bean = BINDINGS.get(name.trim());
 
-        if ( bean == null ) {
-
-            bean = this.createBean(name);
-
-            if ( bean == null ) {
-
-                throw new NoBeanException();
-            }
-        }
+        this.assertBean(bean, name);
 
         return bean;
     }
@@ -87,5 +75,21 @@ public virtual class Container {
         }
 
         return bean;
+    }
+
+    /**
+     * Asserts that the passed bean is not null
+     *
+     * @param Object bean
+     * @param String name
+     * @throws Container.InvalidBeanException
+     */
+    protected void assertBean(Object bean, String name) {
+
+        if ( bean == null ) {
+
+            String message = String.format(StringConstants.INVALID_BEAN_EXCEPTION, new String[]{ name });
+            throw new Container.InvalidBeanException(message);
+        }
     }
 }
