@@ -6,6 +6,13 @@
 public virtual class Container {
 
     /**
+     * @author Themba Malungani <themba.clarence@gmail.com>
+     * @description Thrown when no bean is registered
+     * @date 2019-09-07
+     */
+    public class InvalidBeanException {}
+
+    /**
      * These are the bean bindings. The binding takes the form:
      * beanName => instance
      */
@@ -20,7 +27,7 @@ public virtual class Container {
      * @throws InvalidBeanException
      * @param bean
      */
-    public void bind(String name, Object bean) {
+    public virtual void bind(String name, Object bean) {
 
         if ( bean instanceof String ) {
             
@@ -29,7 +36,7 @@ public virtual class Container {
             if ( bean == null ) {
 
                 String message = String.format(StringConstants.INVALID_BEAN_EXCEPTION, new String[]{ bean });
-                throw new InvalidBeanException(message);
+                throw new Container.InvalidBeanException(message);
             }
         }
 
@@ -43,7 +50,7 @@ public virtual class Container {
      * @throws NoBeanException
      * @return
      */
-    public Object getBean(String name) {
+    public virtual Object getBean(String name) {
 
         Object bean = BINDINGS.get(name.trim());
 
@@ -66,7 +73,7 @@ public virtual class Container {
      * @param String name
      * @return Object
      */
-    protected Object createBean(String name) {
+    protected virtual Object createBean(String name) {
 
         Object bean;
 
