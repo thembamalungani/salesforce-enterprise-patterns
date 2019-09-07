@@ -14,8 +14,8 @@ public class RequestFactory {
     public static HttpRequest getRequestFor(Type type) {
 
         HttpRequest request = HttpRequestt.fromContext(RestContext.request);
-        IRequestTranslator translator = RequestTranslatorFactory.getTranslatorForHandler(type.getName());
+        IRequestPreprocessor preprocessor = RequestPreprocessorFactory.getPreprocessorFor(type.getName());
     
-        return translator.translate(request);
+        return preprocessor.process(request);
     }
 }

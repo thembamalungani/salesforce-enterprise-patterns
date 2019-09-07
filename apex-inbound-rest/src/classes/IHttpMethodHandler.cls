@@ -6,10 +6,10 @@
 public interface IHttpMethodHandler {
     
     /**
-     * Handles a HttpHandler.Request request
+     * Handles a HttpRequest request
      *
-     * @param HttpHandler.Request request 
-     * @return HttpHandler.Response
+     * @param HttpRequest request 
+     * @return HttpResponse
      */
     HttpResponse handle(HttpRequest request);
 

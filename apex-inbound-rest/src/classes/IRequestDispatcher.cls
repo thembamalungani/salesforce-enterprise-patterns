@@ -6,11 +6,11 @@
 public interface IRequestDispatcher {
 
     /**
-     * Handles the http request by delegating the handling to the instance of HttpRouteHandler
+     * Handles the http request by delegating the handling to the instance of HttpMethodHandler
      * passed
      *
      * @param Type type
-     * @return HttpHandler.Response
+     * @return HttpResponse
      */
     HttpResponse dispatch(Type type);
 }

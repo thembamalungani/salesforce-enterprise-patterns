@@ -8,9 +8,9 @@ public interface IHttpRequestLogger {
     /**
      * handles logging of http request and response
      * 
-     * @param HttpHandler.Request request
-     * @param HttpHandler.Response response
+     * @param HttpRequest request
+     * @param HttpResponse response
      * @return 
      */
-    void log(HttpHandler.Request request, HttpHandler.Response response);
+    void log(HttpRequest request, HttpResponse response);
 }
