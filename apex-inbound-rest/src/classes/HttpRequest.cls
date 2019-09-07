@@ -3,7 +3,7 @@
  * @description This is the http request class
  * @date 2019-09-07
  */
-public with sharing class HttpRequest {
+public class HttpRequest {
 
     /**
      * HttpRequest default constructor

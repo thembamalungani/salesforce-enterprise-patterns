@@ -9,4 +9,14 @@ public class HttpResponse {
      * HttpResponse default constructor
      */
     public HttpResponse() {}
+
+    /**
+     * Check if the requests was successful or not
+     *
+     * @return Boolean
+     */
+    public Boolean isSucces() {
+
+        return true;
+    }
 }

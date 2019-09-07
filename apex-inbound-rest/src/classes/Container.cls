@@ -4,7 +4,13 @@
  * @date 2019-09-06
  */
 public virtual class Container {
-
+    
+    /**
+     * Used when a bean exception is thrown
+     * @param String INVALID_BEAN_EXCEPTION
+     */
+    public final String INVALID_BEAN_EXCEPTION = 'Invalid bean: %s, please ensure you have a defined bean with default constructor';
+    
     /**
      * @author Themba Malungani <themba.clarence@gmail.com>
      * @description Thrown when no bean is registered
@@ -88,7 +94,7 @@ public virtual class Container {
 
         if ( bean == null ) {
 
-            String message = String.format(StringConstants.INVALID_BEAN_EXCEPTION, new String[]{ name });
+            String message = String.format(INVALID_BEAN_EXCEPTION, new String[]{ name });
             throw new Container.InvalidBeanException(message);
         }
     }
