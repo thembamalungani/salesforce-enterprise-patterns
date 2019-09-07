@@ -24,7 +24,7 @@ public virtual class Container {
 
         if ( bean instanceof String ) {
             
-            bean bean = this.constructBean((String)bean);
+            bean bean = this.createBean((String)bean);
 
             if ( bean == null ) {
 
@@ -49,7 +49,7 @@ public virtual class Container {
 
         if ( bean == null ) {
 
-            bean = this.constructBean(name);
+            bean = this.createBean(name);
 
             if ( bean == null ) {
 
@@ -66,7 +66,7 @@ public virtual class Container {
      * @param String name
      * @return Object
      */
-    protected Object constructBean(String name) {
+    protected Object createBean(String name) {
 
         Object bean;
 
