@@ -24,11 +24,9 @@ public virtual class Container {
 
         if ( bean instanceof String ) {
             
-            try {
+            bean bean = this.constructBean((String)bean);
 
-                bean = Type.forName((String)bean).newInstance();
-
-            } catch (Exception e) {
+            if ( bean == null ) {
 
                 String message = String.format(StringConstants.INVALID_BEAN_EXCEPTION, new String[]{ bean });
                 throw new InvalidBeanException(message);
