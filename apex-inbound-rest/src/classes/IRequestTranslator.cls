@@ -8,8 +8,8 @@ public interface IRequestTranslator {
     /**
      * Translates the request
      *
-     * @param HttpHandler.Request request
-     * @return HttpHandler.Request
+     * @param HttpRequest request
+     * @return HttpRequest
      */
-    HttpHandler.Request translate(HttpHandler.Request request);
+    HttpRequest translate(HttpRequest request);
 }

@@ -9,9 +9,9 @@ public class RequestFactory {
      * Prepares a request
      *
      * @param Type type
-     * @return HttpHandler.Request
+     * @return HttpRequest
      */
-    public static HttpHandler.Request getRequestFor(Type type) {
+    public static HttpRequest getRequestFor(Type type) {
 
         HttpRequest request = HttpRequestt.fromContext(RestContext.request);
         IRequestTranslator translator = RequestTranslatorFactory.getTranslatorForHandler(type.getName());

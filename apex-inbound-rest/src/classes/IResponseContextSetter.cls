@@ -8,7 +8,7 @@ public interface IResponseContextSetter {
     /**
      * Sets the response context
      *
-     * @param HttpHandler.Response response
+     * @param HttpResponse response
      */
-    void setContext(HttpHandler.Response response);
+    void setContext(HttpResponse response);
 }

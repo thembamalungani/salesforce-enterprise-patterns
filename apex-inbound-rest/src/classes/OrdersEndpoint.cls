@@ -9,10 +9,10 @@ global with sharing class OrdersEndpoint {
     /**
      * Handles POST request to the leads endpoint
      * 
-     * @return HttpHandler.Response
+     * @return HttpResponse
      */
     @HttpPost
-    global static HttpHandler.Response create() {
+    global static HttpResponse create() {
 
         return RequestDispatcher.dispatch(OrdersCreateHandler.class);
     }

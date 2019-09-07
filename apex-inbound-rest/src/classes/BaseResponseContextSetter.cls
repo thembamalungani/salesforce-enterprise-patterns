@@ -15,7 +15,5 @@ public class BaseResponseContextSetter implements IResponseContextSetter {
      *
      * @param HttpResponse response
      */
-    void virtual setContext(HttpResponse response) {
-
-    }
+    void virtual setContext(HttpResponse response) {}
 }

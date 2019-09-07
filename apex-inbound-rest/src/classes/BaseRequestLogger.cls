@@ -16,7 +16,5 @@ public virtual class BaseRequestLogger implements IHttpRequestLogger {
      * @param HttpRequest request
      * @param HttpResponse response
      */
-    public virtual void log(HttpRequest request, HttpResponse response) {
-
-    }
+    public virtual void log(HttpRequest request, HttpResponse response) {}
 }
