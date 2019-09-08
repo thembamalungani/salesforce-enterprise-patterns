@@ -14,6 +14,6 @@ global with sharing class OrdersEndpoint_v1 {
     @HttpPost
     global static void create() {
 
-        RequestDispatcher.getInstance().dispatch(OrdersCreateHandler.class).getData();
+        RequestDispatcher.getInstance().dispatch(OrdersCreateHandler.class);
     }
 }
