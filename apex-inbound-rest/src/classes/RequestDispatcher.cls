@@ -5,10 +5,27 @@
  */
 public class RequestDispatcher implements IRequestDispatcher {
     
+    public static RequestDispatcher instance;
+
     /**
      * HttpHandler default constructor
      */
-    public RequestDispatcher() {}
+    private RequestDispatcher() {}
+
+    /**
+     * Returns an instance of RequestDispatcher
+     *
+     * @return   RequestDispatcher
+     */
+    public static RequestDispatcher getInstance() {
+
+        if ( instance == null ) {
+            
+            instance = new RequestDispatcher();
+        }
+
+        return instance;
+    }
 
     /**
      * Handles the http request by sdelegating the handling to the instance of HttpRouteHandler
@@ -21,8 +38,11 @@ public class RequestDispatcher implements IRequestDispatcher {
 
         HttpRequest request = RequestFactory.getRequestFor(type);
         IHttpMethodHandler handler = HttpMethodHandlerFactory.getHandlerFor(type);
+        IResponseContextSetter contextSetter = ResponseContextSetterFactory.getResponseContextSetterFor(type);
         HttpResponse response = handler.handle(request);
 
+        contextSetter.setContext(response);
+        
         this.done(handler, request, response);
 
         return response;
@@ -35,7 +55,7 @@ public class RequestDispatcher implements IRequestDispatcher {
      * @param HttpRequest request
      * @param HttpResponse response
      */
-    public void done(handler, HttpRequest request, HttpResponse response) {
+    public void done(IHttpMethodHandler handler, HttpRequest request, HttpResponse response) {
 
         if ( response.isSuccess() ) {
 

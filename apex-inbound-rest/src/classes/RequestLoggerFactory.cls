@@ -11,18 +11,18 @@ public class RequestLoggerFactory {
      * @param Type type
      * @return IRequestLogger
      */
-    public static IRequestLogger getLoggerFor(Type type) {
+    public static IHttpRequestLogger getLoggerFor(Type type) {
         
-        IRequestLogger logger;
+        IHttpRequestLogger logger;
 
         try {
 
             String loggerName = type.getName().replace('Handler', 'Logger');
-            logger = (IRequestLogger) RestContainer.getBean(loggerName);
+            logger = (IHttpRequestLogger) Container.getBean(loggerName);
 
         } catch (Exception e) {
 
-            logger = (IRequestLogger) RestContainer.getBean(BaseRequestLogger.class.getName());
+            logger = (IHttpRequestLogger) Container.getBean(BaseRequestLogger.class.getName());
         }
 
         return logger;

@@ -17,8 +17,11 @@ public class OrdersCreateHandler extends BaseHttpMethodHandler {
      * @param HttpRequest request
      * @return HttpResponse
      */
-    public override HttpResponse handle(HttpRequest request) {
+    public HttpResponse handle(HttpRequest request) {
 
-        return null;
+        return new HttpResponse()
+                    .setCode(200)
+                    .setData('test data')
+                    .setHeader('Context-Type', 'application/json');
     }
 }

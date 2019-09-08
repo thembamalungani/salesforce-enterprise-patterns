@@ -15,5 +15,14 @@ public class BaseResponseContextSetter implements IResponseContextSetter {
      *
      * @param HttpResponse response
      */
-    void virtual setContext(HttpResponse response) {}
+    public virtual void setContext(HttpResponse response) {
+        
+        RestContext.response.statusCode = response.getCode();
+        RestContext.response.responseBody = Blob.valueOf(response.getData());
+        
+        for (String key : response.getHeaders().keySet()) {
+            
+            RestContext.response.addHeader(key, response.getHeaders().get(key));
+        }
+    }
 }

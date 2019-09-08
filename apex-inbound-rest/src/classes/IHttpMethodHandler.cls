@@ -19,7 +19,7 @@ public interface IHttpMethodHandler {
      * @param HttpRequest request
      * @param HttpResponse response
      */
-    void done(HttpRequest request, HttpResponse response);
+    void complete(HttpRequest request, HttpResponse response);
 
     /**
      * Called when the request failed processing

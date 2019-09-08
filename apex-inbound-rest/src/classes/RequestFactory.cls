@@ -13,8 +13,8 @@ public class RequestFactory {
      */
     public static HttpRequest getRequestFor(Type type) {
 
-        HttpRequest request = HttpRequestt.fromContext(RestContext.request);
-        IRequestPreprocessor preprocessor = RequestPreprocessorFactory.getPreprocessorFor(type.getName());
+        HttpRequest request = HttpRequest.fromContext(RestContext.request);
+        IRequestPreprocessor preprocessor = RequestPreprocessorFactory.getPreprocessorFor(type);
     
         return preprocessor.process(request);
     }

@@ -16,7 +16,7 @@ public class HttpMethodHandlerFactory {
         
         try {
 
-            return (IHttpMethodHandler) RestContainer.getBean(type.getName());
+            return (IHttpMethodHandler) Container.getBean(type.getName());
 
         } catch (Exception ex) {
 

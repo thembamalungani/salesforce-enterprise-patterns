@@ -3,7 +3,7 @@
  * @description This is the base http method handler used if non defined
  * @datet 2019-09-07
  */
-public virtual class BaseHttpMethodHandler implements IHttpMethodHandler {
+public abstract class BaseHttpMethodHandler implements IHttpMethodHandler {
     
     /**
      * BaseHttpMethodHandler default constructor

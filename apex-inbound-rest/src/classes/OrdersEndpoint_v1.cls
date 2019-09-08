@@ -9,11 +9,11 @@ global with sharing class OrdersEndpoint_v1 {
     /**
      * Handles POST request to the leads endpoint
      * 
-     * @return HttpResponse
+     * @return String
      */
     @HttpPost
-    global static HttpResponse create() {
+    global static void create() {
 
-        return RequestDispatcher.dispatch(OrdersCreateHandler.class);
+        RequestDispatcher.getInstance().dispatch(OrdersCreateHandler.class).getData();
     }
 }

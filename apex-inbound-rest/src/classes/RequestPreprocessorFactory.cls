@@ -18,11 +18,11 @@ public class RequestPreprocessorFactory {
         try {
 
             String preprocessorName = type.getName().replace('Handler', 'Preprocessor');
-            preprocessor = (IRequestPreprocessor) RestContainer.getBean(preprocessorName);
+            preprocessor = (IRequestPreprocessor) Container.getBean(preprocessorName);
 
         } catch (Exception e) {
             
-            preprocessor = (IRequestPreprocessor) RestContainer.getBean(BaseRequestPreprocessor.class.getName());
+            preprocessor = (IRequestPreprocessor) Container.getBean(BaseRequestPreprocessor.class);
         }
 
         return preprocessor;

@@ -18,13 +18,13 @@ public class ResponseContextSetterFactory {
         try {
 
             String setterName = type.getName().replace('Handler', 'ResponseContextSetter');
-            setter = (IResponseContextSetter) RestContainer.getBean(setterName);
+            setter = (IResponseContextSetter) Container.getBean(setterName);
 
         } catch (Exception e) {
 
-            logger = (IResponseContextSetter) RestContainer.getBean(BaseResponseContextSetter.class.getName());
+            setter = (IResponseContextSetter) Container.getBean(BaseResponseContextSetter.class.getName());
         }
 
-        return logger;
+        return setter;
     }
 }
