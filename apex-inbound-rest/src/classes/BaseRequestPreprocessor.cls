@@ -18,6 +18,6 @@ public virtual class BaseRequestPreprocessor implements IRequestPreprocessor {
      */
     public virtual HttpRequest process(HttpRequest request) {
         
-        return null;
+        return request;
     }
 }

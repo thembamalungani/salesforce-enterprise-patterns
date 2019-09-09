@@ -6,6 +6,27 @@
 public class HttpRequest {
 
     /**
+     * The http method
+     *
+     * @param String method
+     */ 
+    private String method;
+
+    /**
+     * The response headers
+     *
+     * @param Map<String, String>
+     */ 
+    private Map<String, String> headers;
+
+    /**
+     * The response body
+     * 
+     * @param String data
+     */ 
+    protected String data;
+
+    /**
      * HttpRequest default constructor
      */
     public HttpRequest() {}
@@ -18,6 +39,6 @@ public class HttpRequest {
      */
     public static HttpRequest fromContext(RestRequest request) {
 
-        return null;
+        return new RestRequest();
     }
 }
